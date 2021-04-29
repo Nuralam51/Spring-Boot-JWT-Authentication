@@ -1,0 +1,65 @@
+<div class="col-12">
+    <div class="col-sm-12 col-md-6 col-lg-5 center">
+        <h3>Spring Security Registration</h3>
+        <form class="row g-3 mt-2" [formGroup]="registerFormGroup" (ngSubmit)="register()">
+            <div class="form-floating">
+                <input type="text" class="form-control" formControlName="name" 
+                    placeholder="Name" required="required">
+                <label for="username">Name</label>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required || name.errors.notOnlyWhitespace" class="invalid">
+                        Name is required.
+                    </div>
+                    <div *ngIf="name.errors.minlength" class="invalid">
+                        Name must be at least 3 character long.
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" formControlName="username" 
+                    placeholder="Username" required="required">
+                <label for="username">Username</label>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                    <div *ngIf="username.errors.required || username.errors.notOnlyWhitespace" class="invalid">
+                        Username is required.
+                    </div>
+                    <div *ngIf="username.errors.minlength" class="invalid">
+                        Username must be at least 3 character long.
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" formControlName="email" 
+                    placeholder="Email" required="required">
+                <label for="username">Email</label>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required || email.errors.notOnlyWhitespace" class="invalid">
+                        Email is required.
+                    </div>
+                    <div *ngIf="email.errors.pattern" class="invalid">
+                        Email must be valid email address format.
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" formControlName="password"
+                    placeholder="Password" required="required">
+                <label for="password">Password</label>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors.required || password.errors.notOnlyWhitespace" class="invalid">
+                        Password is required.
+                    </div>
+                    <div *ngIf="password.errors.pattern" class="invalid">
+                        Password must be use character and number both.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+        <div class="mt-3">
+            <a routerLink="/login">Already have an account?</a>
+        </div>
+    </div>
+</div>

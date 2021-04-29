@@ -1,0 +1,15 @@
+.invalid{
+    color: red;
+    margin-top: .3rem;
+}
+body{
+    background-color: #3e3e3e;
+    color: white;
+}
+label{
+    color: #3e3e3e;
+}
+.center{
+    margin-top: 14rem!important;
+    margin-left: 23rem;
+}
